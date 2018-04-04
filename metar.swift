@@ -55,11 +55,82 @@ do {
 ********************************************************************************/
 
 print("StationID")
-//var StationID = matches(for:"\\d", in: pageContents!)
-var StationID = matches(for:"(,[^,+(?=,]*,)", in: pageContents!)
+var StationID = matches(for:"(?<=,)[^,\\n]+(?=,)", in: pageContents!)
+//var StationID = matches(for:"\\w{4}(,[^,+(?=,]*,)", in: pageContents!)
 //var StationID = matches(for:"\\w\\w\\w\\w,\\d\\d\\d\\d-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\dZ,((.+?)(?:,|$)){4}", in: pageContents!)
 print(StationID)
 
+class station {
+    var id = ""
+    var time  = ""
+    var lat = ""
+    var long = ""
+    var temp = ""
+    var dewpoint = ""
+    var wind_d = ""
+    var wind_s = ""
+    var wind_g = ""
+    var visibility = ""
+    var alt = ""
+    var sea = ""
+    var corrected = ""
+    var auto = ""
+    var auto_s = ""
+    var main = ""
+    var no_s = ""
+    var light = ""
+    var freeze = ""
+    var present = ""
+    var wx_s = ""
+    var sky_cover = ""
+    var cloud_b = ""
+    var sky_cover2 = ""
+    var cloud_b2 = ""
+    var sky_cover3 = ""
+    var cloud_b3 = ""
+    var sky_cover4 = ""
+    var cloud_b4 = ""
+    var flight = ""
+    var three_hr = ""
+    var maxT = ""
+    var minT = ""
+    var maxT24 = ""
+    var minT24 = ""
+    var precip = ""
+    var pcp3 = ""
+    var pcp6 = ""
+    var pcp24 = ""
+    var snowin = ""
+    var vert = ""
+    var metar_type = ""
+    var elevation_m = ""
+}
+var count = 0
+var count2 = 0
+var stations = [station()]
+for i in 0...StationID.count{
+    var temporary : station
+    
+    if(count % 42 == 0)
+    {
+        count2 = 0
+    }
+    if(count2 == 0)
+    {
+        temporary.id = StationID[i].joined(separator: "")
+    }
+
+    if(count2 == 1)
+    {
+        temporary.time = StationID[i].joined(separator: "")
+    }
+        
+        
+    
+    
+    
+
+}
 
 
 /********************************************************************************
