@@ -108,11 +108,13 @@ class station {
 var count = 0
 var count2 = 0
 var stations = [station()]
-for i in 0...StationID.count{
-    var temporary : station
+var temporary = station()
+/*for i in 0...StationID.count{
+   
     
     if(i % 42 == 0)
     {
+        temporary = station()
         count2 = 0
     }
     if(count2 == 0)
@@ -287,7 +289,9 @@ for i in 0...StationID.count{
     if(count2 == 41)
     {
         temporary.elevation_m = StationID[i].joined(separator: "")
+        stations.append(temporary)
     }
+    
     count2 = count2 + 1
     
     
@@ -298,6 +302,7 @@ for i in 0...StationID.count{
     
 
 }
+*/
 
 
 /********************************************************************************
