@@ -55,10 +55,10 @@ do {
 ********************************************************************************/
 
 print("StationID")
-var StationID = matches(for:",[^,\\n]+(?=,)", in: pageContents!)
+var stationID = matches(for:",[^,\\n]+(?=,)", in: pageContents!)
 //var StationID = matches(for:"\\w{4}(,[^,+(?=,]*,)", in: pageContents!)
 //var StationID = matches(for:"\\w\\w\\w\\w,\\d\\d\\d\\d-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\dZ,((.+?)(?:,|$)){4}", in: pageContents!)
-print(StationID)
+print(stationID)
 
 class station {
     var id = ""
@@ -104,58 +104,65 @@ class station {
     var vert = ""
     var metar_type = ""
     var elevation_m = ""
-    init{
-     id = stationID[43 + (42*index)]
-     time  = stationID[43 + 1 + (42*index)]
-     lat = stationID[43 + 2 + (42*index)]
-     long = stationID[43 + 3 + (42*index)]
-     temp = stationID[43 + 4 + (42*index)]
-     dewpoint = stationID[43 + 5 + (42*index)]
-     wind_d = stationID[43 + 6 + (42*index)]
-     wind_s = stationID[43 + 7 + (42*index)]
-     wind_g = stationID[43 + 8 + (42*index)]
-     visibility = stationID[43 + 9 + (42*index)]
-     alt = stationID[43 + 10 + (42*index)]
-     sea = stationID[43 + 11 + (42*index)]
-     corrected = stationID[43 + 12 + (42*index)]
-     auto = stationID[43 + 13 + (42*index)]
-     auto_s = stationID[43 + 14 + (42*index)]
-     main = stationID[43 + 15 + (42*index)]
-     no_s = stationID[43 + 16 + (42*index)]
-     light = stationID[43 + 17 + (42*index)]
-     freeze = stationID[43 + 18 + (42*index)]
-     present = stationID[43 + 19 + (42*index)]
-     wx_s = stationID[43 + 20 + (42*index)]
-     sky_cover = stationID[43 + 21 + (42*index)]
-     cloud_b = stationID[43 + 22 + (42*index)]
-     sky_cover2 = stationID[43 + 23 + (42*index)]
-     cloud_b2 = stationID[43 + 24 + (42*index)]
-     sky_cover3 = stationID[43 + 25 + (42*index)]
-     cloud_b3 = stationID[43 + 26 + (42*index)]
-     sky_cover4 = stationID[43 + 27 + (42*index)]
-     cloud_b4 = stationID[43 + 28 + (42*index)]
-     flight = stationID[43 + 29 + (42*index)]
-     three_hr = stationID[43 + 30 + (42*index)]
-     maxT = stationID[43 + 31 + (42*index)]
-     minT = stationID[43 + 32 + (42*index)]
-     maxT24 = stationID[43 + 33 + (42*index)]
-     minT24 = stationID[43 + 34 + (42*index)]
-     precip = stationID[43 + 35 + (42*index)]
-     pcp3 = stationID[43 + 36 + (42*index)]
-     pcp6 = stationID[43 + 37 + (42*index)]
-     pcp24 = stationID[43 + 38 + (42*index)]
-     snowin = stationID[43 + 39 + (42*index)]
-     vert = stationID[43 + 40 + (42*index)]
-     metar_type = stationID[43 + 41 + (42*index)]
-     elevation_m = stationID[43 + 42 + (42*index)]
-        
+    init(index: Int){
+        print("start")
+        id = stationID[43 + (42*index)][0]
+        time  = stationID[43 + 1 + (42*index)][0]
+        lat = stationID[43 + 2 + (42*index)][0]
+        long = stationID[43 + 3 + (42*index)][0]
+        temp = stationID[43 + 4 + (42*index)][0]
+        dewpoint = stationID[43 + 5 + (42*index)][0]
+        wind_d = stationID[43 + 6 + (42*index)][0]
+        wind_s = stationID[43 + 7 + (42*index)][0]
+        wind_g = stationID[43 + 8 + (42*index)][0]
+        visibility = stationID[43 + 9 + (42*index)][0]
+        alt = stationID[43 + 10 + (42*index)][0]
+        sea = stationID[43 + 11 + (42*index)][0]
+        corrected = stationID[43 + 12 + (42*index)][1]
+        auto = stationID[43 + 13 + (42*index)][1]
+        auto_s = stationID[43 + 14 + (42*index)][1]
+        main = stationID[43 + 15 + (42*index)][1]
+        no_s = stationID[43 + 16 + (42*index)][1]
+        light = stationID[43 + 17 + (42*index)][1]
+        freeze = stationID[43 + 18 + (42*index)][1]
+        present = stationID[43 + 19 + (42*index)][1]
+        wx_s = stationID[43 + 20 + (42*index)][1]
+        sky_cover = stationID[43 + 21 + (42*index)][1]
+        cloud_b = stationID[43 + 22 + (42*index)][1]
+        sky_cover2 = stationID[43 + 23 + (42*index)][1]
+        cloud_b2 = stationID[43 + 24 + (42*index)][1]
+        sky_cover3 = stationID[43 + 25 + (42*index)][1]
+        cloud_b3 = stationID[43 + 26 + (42*index)][1]
+        sky_cover4 = stationID[43 + 27 + (42*index)][1]
+        cloud_b4 = stationID[43 + 28 + (42*index)][1]
+        flight = stationID[43 + 29 + (42*index)][1]
+        three_hr = stationID[43 + 30 + (42*index)][1]
+        maxT = stationID[43 + 31 + (42*index)][1]
+        minT = stationID[43 + 32 + (42*index)][1]
+        maxT24 = stationID[43 + 33 + (42*index)][1]
+        minT24 = stationID[43 + 34 + (42*index)][1]
+        precip = stationID[43 + 35 + (42*index)][1]
+        pcp3 = stationID[43 + 36 + (42*index)][1]
+        pcp6 = stationID[43 + 37 + (42*index)][1]
+        pcp24 = stationID[43 + 38 + (42*index)][1]
+        snowin = stationID[43 + 39 + (42*index)][1]
+        vert = stationID[43 + 40 + (42*index)][1]
+        metar_type = stationID[43 + 41 + (42*index)][1]
+        elevation_m = stationID[43 + 42 + (42*index)][1]
+        print("end")
         
     }
 }
 var count = 0
 var count2 = 0
-var stations = [station()]
-var temporary = station()
+var stations: [station] = []
+for i in 1...10
+{
+var temp = station(index : i)
+stations.append(temp)
+}
+print(stations[3])
+//var temporary = station()
 /*for i in 0...StationID.count{
    
     
