@@ -111,7 +111,7 @@ var stations = [station()]
 for i in 0...StationID.count{
     var temporary : station
     
-    if(count % 42 == 0)
+    if(i % 42 == 0)
     {
         count2 = 0
     }
@@ -124,6 +124,173 @@ for i in 0...StationID.count{
     {
         temporary.time = StationID[i].joined(separator: "")
     }
+    if(count2 == 2)
+    {
+        temporary.lat = StationID[i].joined(separator: "")
+    }
+    if(count2 == 3)
+    {
+        temporary.long = StationID[i].joined(separator: "")
+    }
+    if(count2 == 4)
+    {
+        temporary.temp = StationID[i].joined(separator: "")
+    }
+    if(count2 == 5)
+    {
+        temporary.dewpoint = StationID[i].joined(separator: "")
+    }
+    if(count2 == 6)
+    {
+        temporary.wind_d = StationID[i].joined(separator: "")
+    }
+    if(count2 == 7)
+    {
+        temporary.wind_s = StationID[i].joined(separator: "")
+    }
+    if(count2 == 8)
+    {
+        temporary.wind_g = StationID[i].joined(separator: "")
+    }
+    if(count2 == 9)
+    {
+        temporary.visibility = StationID[i].joined(separator: "")
+    }
+    if(count2 == 10)
+    {
+        temporary.alt = StationID[i].joined(separator: "")
+    }
+    if(count2 == 11)
+    {
+        temporary.sea = StationID[i].joined(separator: "")
+    }
+    if(count2 == 12)
+    {
+        temporary.corrected = StationID[i].joined(separator: "")
+    }
+    if(count2 == 13)
+    {
+        temporary.auto = StationID[i].joined(separator: "")
+    }
+    if(count2 == 14)
+    {
+        temporary.auto_s = StationID[i].joined(separator: "")
+    }
+    if(count2 == 15)
+    {
+        temporary.main = StationID[i].joined(separator: "")
+    }
+    if(count2 == 16)
+    {
+        temporary.no_s = StationID[i].joined(separator: "")
+    }
+    if(count2 == 17)
+    {
+        temporary.light = StationID[i].joined(separator: "")
+    }
+    if(count2 == 18)
+    {
+        temporary.freeze = StationID[i].joined(separator: "")
+    }
+    if(count2 == 19)
+    {
+        temporary.present = StationID[i].joined(separator: "")
+    }
+    if(count2 == 20)
+    {
+        temporary.wx_s = StationID[i].joined(separator: "")
+    }
+    if(count2 == 21)
+    {
+        temporary.sky_cover = StationID[i].joined(separator: "")
+    }
+    if(count2 == 22)
+    {
+        temporary.cloud_b = StationID[i].joined(separator: "")
+    }
+    if(count2 == 23)
+    {
+        temporary.sky_cover2 = StationID[i].joined(separator: "")
+    }
+    if(count2 == 24)
+    {
+        temporary.cloud_b2 = StationID[i].joined(separator: "")
+    }
+     if(count2 == 25)
+    {
+        temporary.sky_cover3 = StationID[i].joined(separator: "")
+    }
+    if(count2 == 25)
+    {
+        temporary.cloud_b3 = StationID[i].joined(separator: "")
+    }
+    if(count2 == 26)
+    {
+        temporary.sky_cover4 = StationID[i].joined(separator: "")
+    }
+    if(count2 == 27)
+    {
+        temporary.cloud_b4 = StationID[i].joined(separator: "")
+    }
+    if(count2 == 28)
+    {
+        temporary.flight = StationID[i].joined(separator: "")
+    }
+    if(count2 == 29)
+    {
+        temporary.three_hr = StationID[i].joined(separator: "")
+    }
+    if(count2 == 30)
+    {
+        temporary.maxT = StationID[i].joined(separator: "")
+    }
+    if(count2 == 31)
+    {
+        temporary.minT = StationID[i].joined(separator: "")
+    }
+    if(count2 == 32)
+    {
+        temporary.maxT24 = StationID[i].joined(separator: "")
+    }
+    if(count2 == 33)
+    {
+        temporary.minT24 = StationID[i].joined(separator: "")
+    }
+    if(count2 == 34)
+    {
+        temporary.precip = StationID[i].joined(separator: "")
+    }
+    if(count2 == 35)
+    {
+        temporary.pcp3 = StationID[i].joined(separator: "")
+    }
+    if(count2 == 36)
+    {
+        temporary.pcp6 = StationID[i].joined(separator: "")
+    }
+    if(count2 == 37)
+    {
+        temporary.pcp24 = StationID[i].joined(separator: "")
+    }
+    if(count2 == 38)
+    {
+        temporary.snowin = StationID[i].joined(separator: "")
+    }
+    if(count2 == 39)
+    {
+        temporary.vert = StationID[i].joined(separator: "")
+    }
+    if(count2 == 40)
+    {
+        temporary.metar_type = StationID[i].joined(separator: "")
+    }
+    if(count2 == 41)
+    {
+        temporary.elevation_m = StationID[i].joined(separator: "")
+    }
+    count2 = count2 + 1
+    
+    
         
         
     
