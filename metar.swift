@@ -55,7 +55,7 @@ do {
 ********************************************************************************/
 
 print("StationID")
-var stationID = matches(for:",[^,\\n]+(?=,)", in: pageContents!)
+var stationID = matches(for:"(?<=,)[^,\\n]*", in: pageContents!)
 //var StationID = matches(for:"\\w{4}(,[^,+(?=,]*,)", in: pageContents!)
 //var StationID = matches(for:"\\w\\w\\w\\w,\\d\\d\\d\\d-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\dZ,((.+?)(?:,|$)){4}", in: pageContents!)
 print(stationID)
@@ -106,62 +106,86 @@ class station {
     var elevation_m = ""
     init(index: Int){
         print("start")
-        id = stationID[43 + (42*index)][0]
-        time  = stationID[43 + 1 + (42*index)][0]
-        lat = stationID[43 + 2 + (42*index)][0]
-        long = stationID[43 + 3 + (42*index)][0]
-        temp = stationID[43 + 4 + (42*index)][0]
-        dewpoint = stationID[43 + 5 + (42*index)][0]
-        wind_d = stationID[43 + 6 + (42*index)][0]
-        wind_s = stationID[43 + 7 + (42*index)][0]
-        wind_g = stationID[43 + 8 + (42*index)][0]
-        visibility = stationID[43 + 9 + (42*index)][0]
-        alt = stationID[43 + 10 + (42*index)][0]
-        sea = stationID[43 + 11 + (42*index)][0]
-        corrected = stationID[43 + 12 + (42*index)][0]
-        auto = stationID[43 + 13 + (42*index)][0]
-        auto_s = stationID[43 + 14 + (42*index)][0]
-        main = stationID[43 + 15 + (42*index)][0]
-        no_s = stationID[43 + 16 + (42*index)][0]
-        light = stationID[43 + 17 + (42*index)][0]
-        freeze = stationID[43 + 18 + (42*index)][0]
-        present = stationID[43 + 19 + (42*index)][0]
-        wx_s = stationID[43 + 20 + (42*index)][0]
-        sky_cover = stationID[43 + 21 + (42*index)][0]
-        cloud_b = stationID[43 + 22 + (42*index)][0]
-        sky_cover2 = stationID[43 + 23 + (42*index)][0]
-        cloud_b2 = stationID[43 + 24 + (42*index)][0]
-        sky_cover3 = stationID[43 + 25 + (42*index)][0]
-        cloud_b3 = stationID[43 + 26 + (42*index)][0]
-        sky_cover4 = stationID[43 + 27 + (42*index)][0]
-        cloud_b4 = stationID[43 + 28 + (42*index)][0]
-        flight = stationID[43 + 29 + (42*index)][0]
-        three_hr = stationID[43 + 30 + (42*index)][0]
-        maxT = stationID[43 + 31 + (42*index)][0]
-        minT = stationID[43 + 32 + (42*index)][0]
-        maxT24 = stationID[43 + 33 + (42*index)][0]
-        minT24 = stationID[43 + 34 + (42*index)][0]
-        precip = stationID[43 + 35 + (42*index)][0]
-        pcp3 = stationID[43 + 36 + (42*index)][0]
-        pcp6 = stationID[43 + 37 + (42*index)][0]
-        pcp24 = stationID[43 + 38 + (42*index)][0]
-        snowin = stationID[43 + 39 + (42*index)][0]
-        vert = stationID[43 + 40 + (42*index)][0]
-        metar_type = stationID[43 + 41 + (42*index)][0]
-        elevation_m = stationID[43 + 42 + (42*index)][0]
+        id = stationID[43 + (43*index)][0]
+        time  = stationID[43 + 1 + (43*index)][0]
+        lat = stationID[43 + 2 + (43*index)][0]
+        long = stationID[43 + 3 + (43*index)][0]
+        temp = stationID[43 + 4 + (43*index)][0]
+        dewpoint = stationID[43 + 5 + (43*index)][0]
+        wind_d = stationID[43 + 6 + (43*index)][0]
+        wind_s = stationID[43 + 7 + (43*index)][0]
+        wind_g = stationID[43 + 8 + (43*index)][0]
+        visibility = stationID[43 + 9 + (43*index)][0]
+        alt = stationID[43 + 10 + (43*index)][0]
+        sea = stationID[43 + 11 + (43*index)][0]
+        corrected = stationID[43 + 12 + (43*index)][0]
+        auto = stationID[43 + 13 + (43*index)][0]
+        auto_s = stationID[43 + 14 + (43*index)][0]
+        main = stationID[43 + 15 + (43*index)][0]
+        no_s = stationID[43 + 16 + (43*index)][0]
+        light = stationID[43 + 17 + (43*index)][0]
+        freeze = stationID[43 + 18 + (43*index)][0]
+        present = stationID[43 + 19 + (43*index)][0]
+        wx_s = stationID[43 + 20 + (43*index)][0]
+        sky_cover = stationID[43 + 21 + (43*index)][0]
+        cloud_b = stationID[43 + 22 + (43*index)][0]
+        sky_cover2 = stationID[43 + 23 + (43*index)][0]
+        cloud_b2 = stationID[43 + 24 + (43*index)][0]
+        sky_cover3 = stationID[43 + 25 + (43*index)][0]
+        cloud_b3 = stationID[43 + 26 + (43*index)][0]
+        sky_cover4 = stationID[43 + 27 + (43*index)][0]
+        cloud_b4 = stationID[43 + 28 + (43*index)][0]
+        flight = stationID[43 + 29 + (43*index)][0]
+        three_hr = stationID[43 + 30 + (43*index)][0]
+        maxT = stationID[43 + 31 + (43*index)][0]
+        minT = stationID[43 + 32 + (43*index)][0]
+        maxT24 = stationID[43 + 33 + (43*index)][0]
+        minT24 = stationID[43 + 34 + (43*index)][0]
+        precip = stationID[43 + 35 + (43*index)][0]
+        pcp3 = stationID[43 + 36 + (43*index)][0]
+        pcp6 = stationID[43 + 37 + (43*index)][0]
+        pcp24 = stationID[43 + 38 + (43*index)][0]
+        snowin = stationID[43 + 39 + (43*index)][0]
+        vert = stationID[43 + 40 + (43*index)][0]
+        metar_type = stationID[43 + 41 + (43*index)][0]
+        elevation_m = stationID[43 + 42 + (43*index)][0]
         print("end")
         
+    }
+    func distance (latitude : Double, longitude : Double) -> Double
+    {
+        var lat2 = latitude * (.pi / 180)
+        var long2 = longitude * (.pi/180)
+        var temp1 = (latitude - Double(lat)!) * (.pi/180)
+        var temp2 = (longitude - Double(long)!) * (.pi/180)
+        var between = sin(temp1/2) * sin(temp1/2) + cos(Double(lat)!) * cos(lat2) + sin(temp2/2) + sin(temp2/2)
+        var almost = atan2(sqrt(between), sqrt(1-between)) * 2
+        var distance2 = almost * 6371000
+        return distance2
+
     }
 }
 var count = 0
 var count2 = 0
 var stations: [station] = []
-for i in 1...10
+for i in 1...stationID.count/45
 {
 var temp = station(index : i)
 stations.append(temp)
 }
-print(stations[3])
+for j in 1...10
+{
+   // print("Latitude: " + stations[j].lat)
+   // print("Longitude: " + stations[j].long)
+    if(Double(stations[j].lat) != nil && Double(stations[j+1].lat) != nil)
+    {
+        var distance = stations[j].distance(latitude : Double(stations[j+1].lat)!, longitude :  Double(stations[j+1].long)!)
+        print("Latitude and Longitude 1: " + stations[j].lat + ", " + stations[j].long)
+        print("Latitude and Longitude 2: " + stations[j+1].lat + ", " + stations[j+1].long)
+        print("Distance between " + stations[j].id + "and " + stations[j+1].id + "is " + String(distance))
+    }
+
+}
 //var temporary = station()
 /*for i in 0...StationID.count{
    
